@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+<body>
+    <div ng-app="dataRetrievalApp" ng-controller="repoController">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Repo Name</th>
+                    <th scope="col">Repo Id</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Type(Public/Private)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="x in repos">
+                    <td>{{ x.name }}</td>
+                    <td>{{ x.id }}</td>
+                    <td>{{ x.description }}</td>
+                    <td>{{ x.private ? 'private' : 'public'}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+	<script src="js/lib/angular.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
